@@ -74,7 +74,7 @@ const Home: NextPage = ({ data, countries }) => {
         <div
           style={{
             position: "absolute",
-            bottom: "120vh",
+            bottom: "110vh",
           }}
           ref={sentinelRef}
         ></div>
