@@ -29,13 +29,16 @@ function Country({ data, countries }) {
   return (
     <div className="dark:bg-[#202C37] bg-[#FAFAFA] min-h-[calc(100vh-5rem)] max-w-screen">
       <div className="py-8 md:px-14 sm:px-9 px-4 lg:px-24 ">
-        <Card className="px-6 py-2 flex justify-center items-start w-fit -ml-2 cursor-pointer">
+        <Card
+          className="px-6 py-2 flex justify-center items-start w-fit -ml-2 cursor-pointer"
+          onClick={() => router.back()}
+        >
           <HiArrowNarrowLeft className="text-2xl mr-4" />
           Back
         </Card>
       </div>
       <div className="h-fit flex   justify-between items-start flex-col md:flex-row md:px-14 sm:px-9 px-4 lg:px-24 ">
-        <div className="md:w-[40%] md:min-h-[14rem] my-auto">
+        <div className="h-full w-full md:w-[40%] md:min-h-[14rem] my-auto">
           <Image
             src={data.flags.png}
             alt={`The flag of ${data.name}`}
@@ -45,7 +48,7 @@ function Country({ data, countries }) {
             quality={100}
           />
         </div>
-        <div className="flex flex-col  justify-between items-start min-w-[50%] md:min-h-[14rem]  my-auto pl-10 xl:pl-0">
+        <div className="flex flex-col  justify-between items-start min-w-[50%] md:min-h-[14rem]  my-auto md:pl-10 xl:pl-0">
           <div className="font-extrabold text-3xl py-6">{data.name}</div>
           <ul className="flex flex-col  justify-start items-start flex-wrap w-full  md:h-fit lg:h-[10rem] ">
             {countryInfo.map((info) => (
@@ -54,16 +57,18 @@ function Country({ data, countries }) {
               </li>
             ))}
           </ul>
-          <div className="flex items-center justify-start w-full ">
-            <div className="font-bold capitalize ">Border countries:</div>
-            <ul className="flex items-center justify-start  flex-wrap max-w-full pl-1">
+          <div className="flex md:items-center md:justify-start items-start justify-start w-full flex-col md:flex-row ">
+            <div className="font-bold capitalize pb-4 sm:pb-0 ">
+              Border countries:
+            </div>
+            <ul className="flex  md:items-center justify-start items-start  flex-wrap max-w-full md:pl-1">
               {data.borders?.map((borderCountry) => {
                 const borderCountryName = countries.find(
                   (country) => country.code === borderCountry
                 )?.name;
                 if (!borderCountryName) return;
                 return (
-                  <li key={borderCountry} className="capitalize">
+                  <li key={borderCountry} className="capitalize -ml-2 md:ml-0">
                     <Card
                       className="cursor-pointer px-6 py-1 mx-2 my-1 border-2 "
                       onClick={() => router.push(`/${borderCountryName}`)}
@@ -258,10 +263,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       name: "åland islands",
       code: "ALA",
     },
-    {
-      name: "israel",
-      code: "ISR",
-    },
+
     {
       name: "guinea",
       code: "GIN",
