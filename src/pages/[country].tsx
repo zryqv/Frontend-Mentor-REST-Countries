@@ -58,7 +58,7 @@ function Country({ data, countries }) {
               quality={100}
             />
           </div>
-          <div className="flex flex-col  justify-between items-start min-w-[50%] md:min-h-[14rem]  my-auto md:pl-10 xl:pl-0">
+          <div className="flex flex-col  justify-between items-start min-w-[50%] md:min-h-[14rem]  my-auto md:pl-10">
             <div className="font-extrabold text-3xl py-6">{data.name}</div>
             <ul className="flex flex-col  justify-start items-start flex-wrap w-full  md:h-fit lg:h-[10rem] ">
               {countryInfo.map((info) => (
