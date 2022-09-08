@@ -27,7 +27,7 @@ function Navbar() {
         {theme === "system" ? (
           resolvedTheme === "light" ? (
             <div
-              className="flex justify-center items-center capitalize font-[600] text-sm "
+              className="flex justify-center items-center capitalize font-[600] dark:text-[#FFFFFF] text-[#111517] text-sm "
               onClick={() => setTheme("dark")}
             >
               <HiMoon className="mr-2 text-lg" />
@@ -35,7 +35,7 @@ function Navbar() {
             </div>
           ) : (
             <div
-              className="flex justify-center items-center capitalize font-[600] text-sm  "
+              className="flex justify-center items-center capitalize font-[600] dark:text-[#FFFFFF] text-[#111517] text-sm  "
               onClick={() => setTheme("light")}
             >
               <HiSun className="mr-2 text-lg" /> Light mode
@@ -43,14 +43,14 @@ function Navbar() {
           )
         ) : theme === "light" ? (
           <div
-            className="flex justify-center items-center capitalize font-[600] text-sm "
+            className="flex justify-center items-center capitalize font-[600] dark:text-[#FFFFFF] text-[#111517] text-sm "
             onClick={() => setTheme("dark")}
           >
             <HiMoon className="mr-2 text-lg" /> Dark mode
           </div>
         ) : (
           <div
-            className="flex justify-center items-center capitalize font-[600] text-sm "
+            className="flex justify-center items-center capitalize font-[600] dark:text-[#FFFFFF] text-[#111517] text-sm "
             onClick={() => setTheme("light")}
           >
             <HiSun className="mr-2 text-lg" /> Light mode
